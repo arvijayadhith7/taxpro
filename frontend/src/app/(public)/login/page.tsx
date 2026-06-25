@@ -2,7 +2,7 @@
 
 import React, { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { signIn, getSession } from "next-auth/react";
 import { Building2, Shield, Eye, EyeOff, AlertTriangle, Key } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -11,8 +11,7 @@ import { Input } from "@/components/ui/input";
 
 function LoginContent() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const [selectedPortal, setSelectedPortal] = useState(searchParams.get("portal") || "incometax");
+
   const [pan, setPan] = useState("");
   const [password, setPassword] = useState("");
   const [secureMessageChecked, setSecureMessageChecked] = useState(false);
@@ -69,7 +68,7 @@ function LoginContent() {
       if (session?.user?.role === "ADMIN") {
         router.push("/admin/dashboard");
       } else {
-        router.push(`/${selectedPortal}/dashboard`);
+        router.push("/portal-select");
       }
     }
   };
@@ -118,20 +117,6 @@ function LoginContent() {
                     </div>
                   )}
 
-                  <div className="space-y-2">
-                    <Label htmlFor="portal-select">Target Simulator Portal *</Label>
-                    <select
-                      id="portal-select"
-                      className="flex h-10 w-full rounded-md border border-gray-300 bg-background px-3 py-2 text-sm font-semibold text-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gov-blue"
-                      value={selectedPortal}
-                      onChange={(e) => setSelectedPortal(e.target.value)}
-                    >
-                      <option value="incometax">Income Tax E-Filing Portal</option>
-                      <option value="gst">GST Common Portal</option>
-                      <option value="tds">TDS CPC (TRACES)</option>
-                      <option value="aadhaar">Aadhaar (UIDAI) Portal</option>
-                    </select>
-                  </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="pan">Enter User ID (PAN / Aadhaar Number) *</Label>
