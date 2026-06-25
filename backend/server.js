@@ -24,8 +24,13 @@ app.post('/api/login', async (req, res) => {
       return res.status(400).json({ error: 'PAN and password are required' });
     }
 
-    const user = await prisma.user.findUnique({
-      where: { pan }
+    const user = await prisma.user.findFirst({
+      where: { 
+        pan: {
+          equals: pan,
+          mode: 'insensitive'
+        }
+      }
     });
 
     if (!user) {
