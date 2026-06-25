@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  pan       String   @unique
+  password  String
+  name      String?
+  email     String?
+  phone     String?
+  role      String   @default("TAXPAYER") // TAXPAYER, ADMIN
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  taxReturns TaxReturn[]
+  notices    Notice[]
+}
+
+model TaxReturn {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assessmentYear String
+  formType       String   // e.g., ITR-1, ITR-2
+  status         String   // FILED, PENDING, PROCESSED, REJECTED
+  ackNumber      String?
+  filedDate      DateTime?
+  totalIncome    Float?
+  taxPaid        Float?
+  refundDue      Float?
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Notice {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  noticeType     String   // e.g., 143(1), 142(1)
+  subject        String
+  description    String?
+  issueDate      DateTime
+  dueDate        DateTime?
+  status         String   // PENDING, RESPONDED, CLOSED
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
