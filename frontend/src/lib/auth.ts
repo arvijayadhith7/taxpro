@@ -1,7 +1,5 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { prisma } from "@/lib/prisma";
-import bcrypt from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -16,29 +14,27 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        const user = await prisma.user.findUnique({
-          where: {
-            pan: credentials.pan,
+        try {
+          const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+          const res = await fetch(`${API_URL}/api/login`, {
+            method: 'POST',
+            body: JSON.stringify({
+              pan: credentials.pan,
+              password: credentials.password
+            }),
+            headers: { "Content-Type": "application/json" }
+          });
+
+          const user = await res.json();
+
+          if (res.ok && user) {
+            return user;
           }
-        });
-
-        if (!user) {
+          return null;
+        } catch (error) {
+          console.error("Auth fetch error:", error);
           return null;
         }
-
-        const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
-
-        if (!isPasswordValid) {
-          return null;
-        }
-
-        return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          pan: user.pan,
-          role: user.role
-        };
       }
     })
   ],
