@@ -106,7 +106,7 @@ export default function ProfilePage() {
               <h2 className="font-bold text-gov-blue">Refund Bank Accounts</h2>
             </div>
             <div className="p-4 space-y-3">
-              {USER_PROFILE.bankAccounts.map((account) => (
+              {USER_PROFILE.bankAccounts.map((account: any) => (
                 <div key={account.id} className="p-3 border border-border rounded-md hover:bg-slate-50 transition-colors flex items-center justify-between">
                   <div>
                     <h4 className="text-sm font-bold">{account.bank}</h4>
