@@ -24,23 +24,23 @@ export const DASHBOARD_KPIS = [
   { id: "compliance", label: "Compliance Score", value: "100/100", trend: { value: "Excellent", isPositive: true } },
 ];
 
-export const ITR_HISTORY = [];
+export const ITR_HISTORY: any[] = [];
 
-export const FORM_26AS_TDS = [];
+export const FORM_26AS_TDS: any[] = [];
 
-export const AIS_SUMMARY = {
+export const AIS_SUMMARY: any = {
   tds: [],
   sft: [],
   taxes: []
 };
 
-export const NOTICES = [];
+export const NOTICES: any[] = [];
 
-export const GST_RETURNS = [];
+export const GST_RETURNS: any[] = [];
 
-export const GST_INVOICES = [];
+export const GST_INVOICES: any[] = [];
 
-export const TDS_CHALLANS = [];
+export const TDS_CHALLANS: any[] = [];
 
-export const EWAY_BILLS = [];
+export const EWAY_BILLS: any[] = [];
 
