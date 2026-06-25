@@ -1,4 +1,4 @@
-export const USER_PROFILE = {
+export const USER_PROFILE: any = {
   name: "STUDENT TAXPAYER",
   pan: "STUDENT123",
   aadhaar: "XXXX-XXXX-XXXX",
