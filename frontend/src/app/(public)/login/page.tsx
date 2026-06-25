@@ -218,7 +218,7 @@ function LoginContent() {
                       type="submit"
                       onClick={(e) => {
                         e.preventDefault();
-                        router.push(`/${selectedPortal}/dashboard`);
+                        router.push("/portal-select");
                       }}
                       className="w-full bg-gov-blue text-white py-2.5 rounded font-bold text-sm hover:bg-gov-blue-light transition"
                     >
