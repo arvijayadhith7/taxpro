@@ -10,7 +10,7 @@ export default function TDSLayout({ children }: { children: React.ReactNode }) {
       {/* Top Header */}
       <header className="bg-white py-2 px-4 flex justify-between items-center border-b-[3px] border-[#c00000]">
         <div className="flex items-center gap-3">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/200px-Emblem_of_India.svg.png" alt="Emblem" className="h-14 object-contain" />
+          <img src="/images/emblem.svg" alt="Emblem" className="h-14 object-contain" />
           <div className="flex flex-col border-l-2 border-gray-300 pl-3">
             <h1 className="text-2xl font-bold text-[#c00000] tracking-tighter leading-none">TRACES</h1>
             <span className="text-[10px] font-bold text-[#1f497d] tracking-wide mt-0.5">TDS Reconciliation Analysis and Correction Enabling System</span>
@@ -51,7 +51,7 @@ export default function TDSLayout({ children }: { children: React.ReactNode }) {
               Quick Links
             </div>
             <ul className="text-xs text-blue-800 bg-[#f4f8fb] p-2 space-y-2">
-              <li><button onClick={() => { import("sonner").then((mod) => mod.toast.info("Downloading Form 26AS mock data...")); }} className="hover:underline flex items-center gap-1.5 text-left"><FileText className="h-3 w-3" /> View Tax Credit (Form 26AS)</button></li>
+              <li><Link href="/tds/form-26as" className="hover:underline flex items-center gap-1.5 text-left"><FileText className="h-3 w-3" /> View Tax Credit (Form 26AS)</Link></li>
               <li><button onClick={() => { import("sonner").then((mod) => mod.toast.info("Conso file request simulated.")); }} className="hover:underline flex items-center gap-1.5 text-left"><FileText className="h-3 w-3" /> Request for Conso File</button></li>
               <li><button onClick={() => { import("sonner").then((mod) => mod.toast.info("Justification report will be available in 24 hours.")); }} className="hover:underline flex items-center gap-1.5 text-left"><FileText className="h-3 w-3" /> Request for Justification Report</button></li>
               <li><button onClick={() => { import("sonner").then((mod) => mod.toast.info("Simulating Form 16/16A generation...")); }} className="hover:underline flex items-center gap-1.5 text-left"><FileText className="h-3 w-3" /> Request for Form 16/16A</button></li>

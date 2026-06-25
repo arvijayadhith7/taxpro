@@ -11,7 +11,7 @@ export default function GSTServicesPage() {
       title: "Registration",
       icon: <ClipboardList className="h-6 w-6 text-gov-blue" />,
       links: [
-        { name: "New Registration", href: "/gst/registration" },
+        { name: "New Registration", href: "/gst/registration/new" },
         { name: "Track Application Status", href: "/gst/registration" },
         { name: "Application for Filing Clarifications", href: "#", alert: "Filing clarifications is auto-approved in the sandbox." }
       ]

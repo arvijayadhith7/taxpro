@@ -46,7 +46,7 @@ export function GovHeader() {
       <header className="bg-white border-b-4 border-blue-800 shadow-sm z-50 sticky top-0 w-full">
         <div className="flex items-center justify-between px-6 py-2">
           <div className="flex items-center gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Aadhaar_Logo.svg/1200px-Aadhaar_Logo.svg.png" alt="Aadhaar Logo" className="h-12 object-contain" />
+            <img src="/images/aadhaar.svg" alt="Aadhaar Logo" className="h-12 object-contain" />
             <div className="border-l-2 border-gray-300 pl-4 py-1 hidden md:block">
               <h1 className="text-xl font-bold text-blue-900 leading-tight">myAadhaar</h1>
               <p className="text-xs text-gray-500">Unique Identification Authority of India</p>
@@ -81,7 +81,7 @@ export function GovHeader() {
         <div className="flex items-center justify-between px-6 py-3">
           <div className="flex items-center gap-4">
             <div className="bg-white p-1 rounded">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/GST_Logo.svg/1200px-GST_Logo.svg.png" alt="GST Logo" className="h-10 object-contain" />
+              <img src="/images/gst.svg" alt="GST Logo" className="h-10 object-contain" />
             </div>
             <div className="hidden md:block">
               <h1 className="text-xl font-bold tracking-wide">Goods and Services Tax</h1>
@@ -124,7 +124,7 @@ export function GovHeader() {
         <div className="h-1 bg-blue-900 w-full" />
         <div className="flex items-center justify-between px-4 py-2">
           <div className="flex items-center gap-3">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/200px-Emblem_of_India.svg.png" alt="Emblem" className="h-12 object-contain" />
+            <img src="/images/emblem.svg" alt="Emblem" className="h-12 object-contain" />
             <div>
               <h1 className="text-xl font-bold text-blue-900">TRACES</h1>
               <p className="text-[10px] text-gray-600 font-bold uppercase tracking-widest">TDS Reconciliation Analysis and Correction Enabling System</p>
@@ -158,7 +158,7 @@ export function GovHeader() {
       <div className="h-1 bg-[#ea580c] w-full" />
       <div className="flex items-center justify-between px-6 py-3">
         <div className="flex items-center gap-5">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Income_Tax_Department_logo.svg/1200px-Income_Tax_Department_logo.svg.png" alt="Income Tax Logo" className="h-10 object-contain bg-white rounded-full p-0.5" />
+          <img src="/images/incometax.svg" alt="Income Tax Logo" className="h-10 object-contain bg-white rounded-full p-0.5" />
           <div className="flex flex-col">
             <span className="text-lg font-bold tracking-wide">e-Filing 2.0</span>
             <span className="text-[10px] text-orange-400 font-semibold tracking-wider uppercase">Income Tax Department</span>

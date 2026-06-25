@@ -17,7 +17,7 @@ export default function GSTLayout({ children }: { children: React.ReactNode }) {
       {/* Main Header */}
       <header className="bg-white border-b border-gray-200 py-3 px-6 shadow-sm flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/GST_Logo.svg/1200px-GST_Logo.svg.png" alt="GST Logo" className="h-12 object-contain" />
+          <img src="/images/gst.svg" alt="GST Logo" className="h-12 object-contain" />
           <div className="flex flex-col border-l border-gray-300 pl-3">
             <h1 className="text-xl font-bold text-[#0f1d3a] leading-tight tracking-tight">Goods and Services Tax</h1>
             <span className="text-[10px] uppercase font-bold text-blue-800 tracking-wider">Government of India</span>
